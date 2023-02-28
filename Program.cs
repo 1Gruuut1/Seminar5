@@ -255,7 +255,7 @@ Console.WriteLine($"Sum elements standing in odd positions = {sum}");
 */
 //Задача 38: Задайте массив вещественных чисел. 
 //Найдите разницу между максимальным и минимальным элементов массива.
-
+/*
 double[] CreateRandomArray(int size, int minVailue, int maxVailue)
 {
     double[] array = new double[size];
@@ -286,3 +286,56 @@ int max = Convert.ToInt32(Console.ReadLine());
 
 double[] myArray = CreateRandomArray(length, min, max);
 ShowArray(myArray);
+*/
+
+double[] CreateRandomArray(int size, )
+{
+    double[] numbers = new double[size];
+    double min = 0;
+    double max = 0;
+    for (int z = 0; z < numbers.Length; z++)
+    {
+        if (numbers[z] > max)
+            {
+                max = numbers[z];
+            }
+        if (numbers[z] < min)
+            {
+                min = numbers[z];
+            }
+    }
+    
+}
+
+
+void FillArrayRandomNumbers(double[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
+        }
+}
+
+void ShowArray(double[] numbers)
+{
+    for(int i = 0; i < numbers.Length; i++)
+        {
+            Console.Write(numbers[i] + "; ");
+        }
+    Console.WriteLine();
+}
+
+
+
+Console.WriteLine("Input a length of new array: ");
+int size = Convert.ToInt32(Console.ReadLine());
+FillArrayRandomNumbers(numbers);
+Console.WriteLine("array: ");
+ShowArray(numbers);
+
+Console.WriteLine($"total {numbers.Length} numbers. Maximum value = {max}, minimum value = {min}");
+Console.WriteLine($"The difference between the maximum and minimum value = {max - min}");
+
+
+
+
