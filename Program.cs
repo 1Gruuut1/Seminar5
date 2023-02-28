@@ -287,33 +287,17 @@ int max = Convert.ToInt32(Console.ReadLine());
 double[] myArray = CreateRandomArray(length, min, max);
 ShowArray(myArray);
 */
-
-double[] CreateRandomArray(int size, )
+/*
+double[] CreateRandomayArr(int size)
 {
     double[] numbers = new double[size];
-    double min = 0;
-    double max = 0;
-    for (int z = 0; z < numbers.Length; z++)
-    {
-        if (numbers[z] > max)
-            {
-                max = numbers[z];
-            }
-        if (numbers[z] < min)
-            {
-                min = numbers[z];
-            }
-    }
-    
-}
-
-
-void FillArrayRandomNumbers(double[] numbers)
-{
+   {
     for(int i = 0; i < numbers.Length; i++)
         {
             numbers[i] = Convert.ToDouble(new Random().Next(100,1000)) / 100;
         }
+   }
+   return numbers;
 }
 
 void ShowArray(double[] numbers)
@@ -325,17 +309,33 @@ void ShowArray(double[] numbers)
     Console.WriteLine();
 }
 
+void FindingMinMaxValue(double[] numbers)
+{
+    double max = Int32.MinValue;
+    double min = Int32.MaxValue;
+    for (int i = 0; i < numbers.Length; i++)
+    {
+        if (numbers[i] > max)
+        {
+            max = numbers[i];
+        }
+        if (numbers[i] < min)
+        {
+            min = numbers[i];
+        }
+    }
+   
+    Console.WriteLine($"total {numbers.Length} numbers. Maximum value = {max}, minimum value = {min}");
+    Console.WriteLine($"The difference between the maximum and minimum value = {max - min}");
+}
 
 
 Console.WriteLine("Input a length of new array: ");
 int size = Convert.ToInt32(Console.ReadLine());
-FillArrayRandomNumbers(numbers);
+double[] Num = CreateRandomayArr(size);
 Console.WriteLine("array: ");
-ShowArray(numbers);
+ShowArray(Num);
+FindingMinMaxValue(Num);
 
-Console.WriteLine($"total {numbers.Length} numbers. Maximum value = {max}, minimum value = {min}");
-Console.WriteLine($"The difference between the maximum and minimum value = {max - min}");
-
-
-
+*/
 
